@@ -1,0 +1,22 @@
+{
+  "name": "hello-node",
+  "version": "1.0.0",
+  "description": "Node.js in docker",
+  "main": "./src/app.js",
+  "scripts": {
+    "start": "node ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "null"
+  },
+  "keywords": [
+    "node",
+    "docker"
+  ],
+  "author": "shunkie",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.5.2"
+  }
+}
