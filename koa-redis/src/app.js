@@ -11,6 +11,7 @@ const redis = new Redis({
 
 app.use(async (ctx) => {
   const views = await redis.incr('views')
+  ctx.type = 'text/html'
   ctx.body = `
     <h1>This page has been visited ${views} times.</h1>
   `
