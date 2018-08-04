@@ -1,0 +1,25 @@
+version: "3"
+services:
+  wordpress:
+    image: wordpress
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_PASSWORD: root
+    networks:
+      - webnet
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+    volumes:
+      - data:/var/lib/mysql
+    networks:
+      - webnet
+volumes:
+  data:
+networks:
+  webnet:
+    driver: bridge
